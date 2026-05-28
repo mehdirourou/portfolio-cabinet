@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Cabinet Ben Salem & Associés — Conseil Juridique & Fiscal</title>
+
+  
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    
+    :root {
+      --bleu-fonce:   #0d1f3c;   
+      --bleu-moyen:   #1a3a6b;   
+      --or:           #c9a84c;   
+      --or-clair:     #f0d98a;   
+      --gris-clair:   #f7f6f2;   
+      --texte:        #2c2c2c;   
+      --texte-muted:  #6b6b6b;   
+      --blanc:        #ffffff;
+      --ombre:        0 4px 24px rgba(13,31,60,0.10);
+    }
+
+    
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box; 
+    }
+
+    html {
+      scroll-behavior: smooth; 
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--texte);
+      background: var(--blanc);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13, 31, 60, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .nav-inner {
+      display: flex;               
+      align-items: center;         
+      justify-content: space-between; 
+      padding: 16px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-logo-nom {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--blanc);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo-tagline {
+      font-size: 10px;
+      color: var(--or);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    
+    .nav-liens {
+      display: flex;
+      list-style: none; 
+      gap: 32px;        
+    }
+
+    .nav-liens a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      transition: color 0.2s; 
+    }
+
+    .nav-liens a:hover {
+      color: var(--or); 
+    }
+
+    
+    .btn-nav {
+      background: var(--or);
+      color: var(--bleu-fonce) !important;
+      font-weight: 500 !important;
+      padding: 8px 18px;
+      border-radius: 4px;
+      transition: background 0.2s !important;
+    }
+
+    .btn-nav:hover {
+      background: var(--or-clair) !important;
+      color: var(--bleu-fonce) !important;
+    }
+
+    
+    .hero {
+      background: var(--bleu-fonce);
+
+      
+      background-image:
+        linear-gradient(135deg, rgba(13,31,60,0.97) 0%, rgba(26,58,107,0.92) 60%, rgba(13,31,60,0.97) 100%),
+        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1400&q=80");
+      background-size: cover;
+      background-position: center;
+
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, var(--or), transparent);
+    }
+
+    .hero-contenu {
+      max-width: 700px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 0 40px;
+    }
+
+    
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--or);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+
+    .hero-titre {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem); 
+      font-weight: 700;
+      color: var(--blanc);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-titre span {
+      color: var(--or); 
+    }
+
+    .hero-sous-titre {
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      max-width: 540px;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    
+    .hero-boutons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap; 
+    }
+
+    
+    .btn-primaire {
+      background: var(--or);
+      color: var(--bleu-fonce);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-primaire:hover {
+      background: var(--or-clair);
+      transform: translateY(-2px); 
+    }
+
+    
+    .btn-secondaire {
+      background: transparent;
+      color: var(--blanc);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      padding: 13px 32px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondaire:hover {
+      border-color: var(--or);
+      color: var(--or);
+    }
+
+    
+    .hero-stats {
+      background: rgba(255,255,255,0.04);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      width: 100%;
+    }
+
+    .hero-stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+    }
+
+    .stat-item {
+      flex: 1;
+      padding: 20px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-nombre {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--or);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    
+    .section-services {
+      padding: 96px 0;
+      background: var(--gris-clair);
+    }
+
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--or);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .section-titre {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--bleu-fonce);
+      margin-bottom: 16px;
+    }
+
+    .section-sous-titre {
+      font-size: 16px;
+      color: var(--texte-muted);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    
+    
+    .services-grille {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    
+    .service-card {
+      background: var(--blanc);
+      border: 1px solid rgba(13,31,60,0.07);
+      border-radius: 8px;
+      padding: 36px 32px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--or), var(--or-clair));
+      transform: scaleX(0); 
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--ombre);
+      border-color: rgba(201,168,76,0.2);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1); 
+    }
+
+    
+    .service-icone {
+      width: 52px;
+      height: 52px;
+      background: rgba(13,31,60,0.06);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .service-titre {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--bleu-fonce);
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      color: var(--texte-muted);
+      line-height: 1.8;
+    }
+
+    
+    .section-apropos {
+      padding: 96px 0;
+      background: var(--blanc);
+    }
+
+    .apropos-grille {
+      display: flex;
+      gap: 80px;
+      align-items: center;
+    }
+
+    
+    .apropos-texte {
+      flex: 0 0 55%;
+    }
+
+    
+    .apropos-visuel {
+      flex: 1;
+    }
+
+    .apropos-liste {
+      list-style: none;
+      margin: 24px 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .apropos-liste li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--texte-muted);
+    }
+
+    
+    .apropos-liste li::before {
+      content: '✦';
+      color: var(--or);
+      font-size: 12px;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    
+    .apropos-cards-stack {
+      position: relative;
+    }
+
+    
+    .apropos-card-principale {
+      background: var(--bleu-fonce);
+      border-radius: 12px;
+      padding: 36px;
+      color: var(--blanc);
+    }
+
+    .apropos-card-principale h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--blanc);
+      margin-bottom: 6px;
+    }
+
+    .apropos-card-principale p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 24px;
+    }
+
+    
+    .mini-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mini-stat {
+      background: rgba(255,255,255,0.06);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .mini-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--or);
+      display: block;
+    }
+
+    .mini-stat-lab {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 4px;
+    }
+
+    
+    .apropos-card-floatante {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--blanc);
+      border: 1px solid rgba(13,31,60,0.1);
+      border-radius: 10px;
+      padding: 16px 20px;
+      box-shadow: var(--ombre);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .floatante-icone {
+      font-size: 28px;
+    }
+
+    .floatante-texte strong {
+      font-size: 15px;
+      color: var(--bleu-fonce);
+      display: block;
+    }
+
+    .floatante-texte span {
+      font-size: 12px;
+      color: var(--texte-muted);
+    }
+
+    
+    .section-equipe {
+      padding: 96px 0;
+      background: var(--gris-clair);
+    }
+
+    .equipe-grille {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .membre-card {
+      background: var(--blanc);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(13,31,60,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .membre-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--ombre);
+    }
+
+    
+    .membre-avatar {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--blanc);
+    }
+
+    .membre-info {
+      padding: 20px;
+    }
+
+    .membre-nom {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      color: var(--bleu-fonce);
+      margin-bottom: 4px;
+    }
+
+    .membre-poste {
+      font-size: 13px;
+      color: var(--or);
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .membre-desc {
+      font-size: 13px;
+      color: var(--texte-muted);
+      line-height: 1.7;
+    }
+
+    
+    .section-contact {
+      padding: 96px 0;
+      background: var(--bleu-fonce);
+      position: relative;
+      overflow: hidden;
+    }
+
+    
+    .section-contact::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .section-contact .section-tag,
+    .section-contact .section-titre {
+      color: var(--blanc);
+    }
+
+    .section-contact .section-sous-titre {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .contact-grille {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    
+    .contact-infos {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .contact-icone-box {
+      width: 44px;
+      height: 44px;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-item-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--or);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .contact-item-valeur {
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    
+    
+    .contact-form {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 36px;
+    }
+
+    .form-ligne {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-groupe {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .form-groupe label {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+    }
+
+    .form-groupe input,
+    .form-groupe select,
+    .form-groupe textarea {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--blanc);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-groupe input::placeholder,
+    .form-groupe textarea::placeholder {
+      color: rgba(255,255,255,0.25);
+    }
+
+    .form-groupe input:focus,
+    .form-groupe select:focus,
+    .form-groupe textarea:focus {
+      border-color: var(--or);
+    }
+
+    .form-groupe select option {
+      background: var(--bleu-fonce);
+    }
+
+    .form-groupe textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .btn-form {
+      width: 100%;
+      background: var(--or);
+      color: var(--bleu-fonce);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-form:hover {
+      background: var(--or-clair);
+    }
+
+    
+    footer {
+      background: #080f1e; 
+      color: rgba(255,255,255,0.35);
+      padding: 32px 0;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--or);
+      text-decoration: none;
+    }
+
+    
+    @media (max-width: 768px) {
+
+      
+      .nav-liens {
+        display: none;
+      }
+
+      
+      .hero-stats-inner {
+        flex-direction: column;
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+      }
+
+      
+      .apropos-grille {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .apropos-texte {
+        flex: none;
+      }
+
+      
+      .apropos-card-floatante {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 16px;
+      }
+
+      
+      .contact-grille {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      
+      .form-ligne {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  
+  <nav>
+    <div class="nav-inner">
+
+      <div class="nav-logo">
+        <span class="nav-logo-nom">Ben Salem & Associés</span>
+        <span class="nav-logo-tagline">Conseil Juridique & Fiscal</span>
+      </div>
+
+      <ul class="nav-liens">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#equipe">Équipe</a></li>
+        <li><a href="#contact" class="btn-nav">Prendre contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  
+  <section id="accueil" class="hero">
+    <div class="container">
+      <div class="hero-contenu">
+
+        <div class="hero-label">
+          ⚖️ &nbsp; Cabinet fondé en 2005 · Tunis, Tunisie
+        </div>
+
+        <h1 class="hero-titre">
+          Votre partenaire<br>
+          <span>juridique & fiscal</span><br>
+          de confiance
+        </h1>
+
+        <p class="hero-sous-titre">
+          Nous accompagnons les entreprises tunisiennes et internationales
+          dans leurs besoins juridiques, fiscaux et réglementaires avec
+          rigueur et confidentialité.
+        </p>
+
+        <div class="hero-boutons">
+          <a href="#contact" class="btn-primaire">Demander un rendez-vous</a>
+          <a href="#services" class="btn-secondaire">Découvrir nos services</a>
+        </div>
+
+      </div>
+    </div>
+
+    
+    <div class="hero-stats">
+      <div class="hero-stats-inner">
+        <div class="stat-item">
+          <span class="stat-nombre">18+</span>
+          <span class="stat-label">Années d'expérience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-nombre">340+</span>
+          <span class="stat-label">Clients accompagnés</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-nombre">97%</span>
+          <span class="stat-label">Taux de satisfaction</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-nombre">5</span>
+          <span class="stat-label">Experts dédiés</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  
+  <section id="services" class="section-services">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-tag">Nos domaines d'expertise</p>
+        <h2 class="section-titre">Des solutions adaptées<br>à chaque situation</h2>
+        <p class="section-sous-titre">
+          Notre équipe pluridisciplinaire couvre l'ensemble des besoins
+          juridiques et fiscaux des entreprises modernes.
+        </p>
+      </div>
+
+      
+      <div class="services-grille">
+
+        <div class="service-card">
+          <div class="service-icone">⚖️</div>
+          <h3 class="service-titre">Droit des affaires</h3>
+          <p class="service-desc">
+            Création de sociétés, rédaction de contrats commerciaux,
+            fusions-acquisitions et restructurations d'entreprises.
+            Nous sécurisons vos opérations commerciales à chaque étape.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icone">📊</div>
+          <h3 class="service-titre">Conseil fiscal</h3>
+          <p class="service-desc">
+            Optimisation fiscale légale, déclarations annuelles,
+            assistance lors de contrôles fiscaux et contentieux
+            avec l'administration. Votre conformité est notre priorité.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icone">🏛️</div>
+          <h3 class="service-titre">Droit du travail</h3>
+          <p class="service-desc">
+            Rédaction de contrats de travail, gestion des conflits
+            sociaux, représentation devant les tribunaux et
+            accompagnement des procédures de licenciement.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icone">🌍</div>
+          <h3 class="service-titre">Investissements étrangers</h3>
+          <p class="service-desc">
+            Accompagnement des investisseurs étrangers souhaitant
+            s'établir en Tunisie : formalités, autorisations,
+            partenariats locaux et rapatriement de bénéfices.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icone">🏠</div>
+          <h3 class="service-titre">Droit immobilier</h3>
+          <p class="service-desc">
+            Transactions immobilières, baux commerciaux et
+            résidentiels, litiges de copropriété et contentieux
+            fonciers. Sécurisez vos investissements immobiliers.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icone">🔐</div>
+          <h3 class="service-titre">Protection des données</h3>
+          <p class="service-desc">
+            Conformité RGPD et réglementation tunisienne sur la
+            protection des données personnelles. Audit, politique
+            de confidentialité et formations pour vos équipes.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="apropos" class="section-apropos">
+    <div class="container">
+      <div class="apropos-grille">
+
+        <div class="apropos-texte">
+          <p class="section-tag">Notre histoire</p>
+          <h2 class="section-titre">Un cabinet à taille humaine,<br>une expertise de premier rang</h2>
+          <p style="color: var(--texte-muted); margin-bottom: 8px; font-size: 15px;">
+            Fondé en 2005 par Maître Karim Ben Salem, notre cabinet s'est
+            imposé comme une référence dans le conseil juridique et fiscal
+            aux entreprises en Tunisie.
+          </p>
+
+          <ul class="apropos-liste">
+            <li>Équipe de 5 avocats et conseillers fiscaux spécialisés</li>
+            <li>Membres du barreau de Tunis et experts comptables agréés</li>
+            <li>Partenariats avec des cabinets européens pour les dossiers internationaux</li>
+            <li>Engagement de confidentialité absolu sur tous les dossiers</li>
+            <li>Disponibilité 6j/7 pour les situations d'urgence</li>
+          </ul>
+
+          <a href="#contact" class="btn-primaire">Nous rencontrer</a>
+        </div>
+
+        <div class="apropos-visuel">
+          <div class="apropos-cards-stack">
+
+            <div class="apropos-card-principale">
+              <h3>Notre engagement qualité</h3>
+              <p>Chaque dossier est traité avec la même rigueur et la même attention aux détails.</p>
+              <div class="mini-stats">
+                <div class="mini-stat">
+                  <span class="mini-stat-num">48h</span>
+                  <div class="mini-stat-lab">Délai de réponse max.</div>
+                </div>
+                <div class="mini-stat">
+                  <span class="mini-stat-num">100%</span>
+                  <div class="mini-stat-lab">Confidentialité garantie</div>
+                </div>
+                <div class="mini-stat">
+                  <span class="mini-stat-num">5 ★</span>
+                  <div class="mini-stat-lab">Note Google moyenne</div>
+                </div>
+                <div class="mini-stat">
+                  <span class="mini-stat-num">3</span>
+                  <div class="mini-stat-lab">Langues de travail</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="apropos-card-floatante">
+              <div class="floatante-icone">🏆</div>
+              <div class="floatante-texte">
+                <strong>Cabinet de l'année 2023</strong>
+                <span>Barreau de Tunis — Droit des affaires</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="equipe" class="section-equipe">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-tag">Notre équipe</p>
+        <h2 class="section-titre">Des experts à votre service</h2>
+        <p class="section-sous-titre">
+          Une équipe soudée, passionnée et toujours disponible
+          pour défendre vos intérêts.
+        </p>
+      </div>
+
+      <div class="equipe-grille">
+
+        
+
+        <div class="membre-card">
+          <div class="membre-avatar" style="background: linear-gradient(135deg, var(--bleu-fonce), var(--bleu-moyen));">KB</div>
+          <div class="membre-info">
+            <h3 class="membre-nom">Me. Karim Ben Salem</h3>
+            <p class="membre-poste">Associé fondateur</p>
+            <p class="membre-desc">Spécialiste en droit des affaires et fiscalité internationale. Ancien conseiller au Ministère des Finances.</p>
+          </div>
+        </div>
+
+        <div class="membre-card">
+          <div class="membre-avatar" style="background: linear-gradient(135deg, #1a4a3a, #2d6e57);">SA</div>
+          <div class="membre-info">
+            <h3 class="membre-nom">Me. Sonia Amara</h3>
+            <p class="membre-poste">Avocate associée</p>
+            <p class="membre-desc">Experte en droit du travail et droit social. Formatrice certifiée en ressources humaines.</p>
+          </div>
+        </div>
+
+        <div class="membre-card">
+          <div class="membre-avatar" style="background: linear-gradient(135deg, #4a1a2a, #8b3a50);">YM</div>
+          <div class="membre-info">
+            <h3 class="membre-nom">Me. Youssef Mansour</h3>
+            <p class="membre-poste">Conseil fiscal senior</p>
+            <p class="membre-desc">Expert-comptable agréé, spécialisé en optimisation fiscale pour PME et startups tunisiennes.</p>
+          </div>
+        </div>
+
+        <div class="membre-card">
+          <div class="membre-avatar" style="background: linear-gradient(135deg, #2a3a1a, #4a6a2a);">LT</div>
+          <div class="membre-info">
+            <h3 class="membre-nom">Me. Leila Trabelsi</h3>
+            <p class="membre-poste">Avocate – Droit immobilier</p>
+            <p class="membre-desc">Spécialiste des transactions immobilières complexes et du droit foncier tunisien.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="contact" class="section-contact">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-tag">Nous contacter</p>
+        <h2 class="section-titre" style="color:white;">Parlons de votre projet</h2>
+        <p class="section-sous-titre">
+          Une question ? Un dossier urgent ? Contactez-nous,
+          nous vous répondons sous 48h.
+        </p>
+      </div>
+
+      <div class="contact-grille">
+
+        
+        <div class="contact-infos">
+
+          <div class="contact-item">
+            <div class="contact-icone-box">📍</div>
+            <div>
+              <p class="contact-item-label">Adresse</p>
+              <p class="contact-item-valeur">45, Avenue Habib Bourguiba<br>1001 Tunis, Tunisie</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icone-box">📞</div>
+            <div>
+              <p class="contact-item-label">Téléphone</p>
+              <p class="contact-item-valeur">+216 1234567</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icone-box">✉️</div>
+            <div>
+              <p class="contact-item-label">Email</p>
+              <p class="contact-item-valeur">contact@bensalem-avocats.tn</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icone-box">🕐</div>
+            <div>
+              <p class="contact-item-label">Horaires</p>
+              <p class="contact-item-valeur">Lundi – Vendredi : 8h30 – 18h<br>Samedi : 9h – 13h (sur RDV)</p>
+            </div>
+          </div>
+
+        </div>
+
+        
+        
+        <div class="contact-form">
+
+          <div class="form-ligne">
+            <div class="form-groupe">
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" name="prenom" placeholder="Votre prénom">
+            </div>
+            <div class="form-groupe">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom">
+            </div>
+          </div>
+
+          <div class="form-groupe">
+            <label for="email">Adresse email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com">
+          </div>
+
+          <div class="form-groupe">
+            <label for="domaine">Domaine concerné</label>
+            <select id="domaine" name="domaine">
+              <option value="" disabled selected>Choisissez un domaine</option>
+              <option>Droit des affaires</option>
+              <option>Conseil fiscal</option>
+              <option>Droit du travail</option>
+              <option>Investissements étrangers</option>
+              <option>Droit immobilier</option>
+              <option>Protection des données</option>
+              <option>Autre</option>
+            </select>
+          </div>
+
+          <div class="form-groupe">
+            <label for="message">Décrivez votre situation</label>
+            <textarea id="message" name="message" placeholder="Décrivez brièvement votre besoin..."></textarea>
+          </div>
+
+          <button class="btn-form" type="button" onclick="alert('Merci ! Nous vous contacterons sous 48h.')">
+            Envoyer ma demande →
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 Cabinet Ben Salem & Associés —
+        <a href="#">Mentions légales</a> ·
+        <a href="#">Politique de confidentialité</a>
+      </p>
+      <p style="margin-top: 6px; font-size: 12px;">
+        Barreau de Tunis · N° d'ordre : 12345 · RNE : 1234567A
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
